@@ -192,7 +192,7 @@
             </div>
         </div>
 
-        <!-- Featured    Projects -->
+        <!-- Featured Projects -->
         <div class="featured">
             <div class="container py-5">
                 <div class="d-flex justify-content-between align-items-center">
@@ -213,13 +213,65 @@
                     </div>
 
                     <div class="d-flex flex-column gap-3">
-                        <img src="./public/asserts/images/building/feature2.svg" alt="" class="image-fluid w-100">
+                        <img src="./public/asserts/images/building/feature2.svg" alt="" class="image-fluid w-100 mt-3 mt-lg-0">
                         <img src="./public/asserts/images/building/feature3.svg" alt="" class="image-fluid w-100">
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Quote Request Form -->
+        <div class="quote py-5 w-100 h-100">
+            <div class="card container p-0">
+                
+                <img src="./public/asserts/images/building/contact-bg.svg" class="card-img image-fluid w-100" alt="building" />
+                <div class="card-img-overlay text-center d-flex justify-content-center align-items-center">
+                    <div class="bg-light col-10 px-5 py-4 py-lg-5">
+                        <div class="headers">
+                            <div class="px-5header-bg position-absolute bg-danger"></div>
+                            <h1 class="fs-3 fw-bold header-text text-center position-relative my-3 pb-4 pb-lg-5">Request A Quote</h1>
+
+                            <form class="row g-3 needs-validation justify-content-center align-items-center text-start" novalidate>
+                                <div class="col-md-5">
+                                  <label for="validationCustom01" class="form-label">First name</label>
+                                  <input type="text" class="form-control rounded-0" id="validationCustom01" placeholder="John Doe" required>
+                                  
+                                </div>
+                                <div class="col-md-5">
+                                  <label for="validationCustom02" class="form-label">Email</label>
+                                  <input type="email" class="form-control rounded-0" id="validationCustom02" placeholder="example@mail.com" required>
+                                  
+                                </div>
+                                <div class="col-md-5">
+                                  <label for="validationCustom03" class="form-label">Phone Number</label>
+                                  <input type="text" class="form-control rounded-0" id="validationCustom03" required>
+                                  
+                                </div>
+                                <div class="col-md-5">
+                                  <label for="validationCustom04" class="form-label">Project Type</label>
+                                  <select class="form-select rounded-0" id="validationCustom04" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option>...</option>
+                                  </select>
+                                 
+                                </div>
+                                
+                                <div class="col-md-10">
+                                    <label for="validationCustom03" class="form-label">Project Details</label>
+                                    <textarea type="text" class="form-control rounded-0" id="validationCustom03" required></textarea>
+                                  
+                                    <div class="col-12 mt-4">
+                                        <button class="btn bgc-new text-light w-100 rounded-0" type="submit">Request Quote</button>
+                                    </div>
+                                </div>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </main>
 
 </body>
