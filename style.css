@@ -1,0 +1,52 @@
+:root {
+    --ff-header: 'IBM Plex Sans', sans-serif;
+    --ff-body: 'Inter', sans-serif;
+    --ff-other: 'Plus Jakarta Sans', sans-serif;
+
+    /* Colors */
+    --clr-primary: #E47A00;
+    --clr-dark: #2E2C2C;
+    --clr-light: #FFB764;
+    --clr-other: #E48415;
+    --clr-primary-light: #F5A951;
+    /* --clr-lighter: #341D02; */
+    --clr-lighter: hsla(32, 89%, 11%, 0.9);
+    --clr-darker: #3E342B;
+}
+
+body {
+    font-family: var(--ff-body) !important;
+}
+
+.nav-link {
+    font-family: var(--ff-other);
+} 
+
+.logo {
+    width: 3rem;
+}
+
+.bg-color {
+    background-color: var(--clr-lighter);
+}
+
+.header-title {
+    font-family: var(--ff-header);
+}
+
+.btn-request {
+    background: var(--clr-primary);
+    font-family: var(--ff-other) !important;
+}
+
+
+@media (max-wdth: 780px) {
+    .bg-responsive {
+        height: 100vh !important;
+    }
+
+    .btn-request {
+        display: block !important;
+        width: 100vw !important;
+    }
+}
