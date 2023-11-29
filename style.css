@@ -95,6 +95,20 @@ body {
     background-color: var(--clr-new);
 }
 
+/* Font Family */
+
+.ff-body {
+    font-family: var(--ff-body);
+}
+
+.ff-header {
+    font-family: var(--ff-header);
+}
+
+.ff-other {
+    font-family: var(--ff-other);
+}
+
 @media (max-wdth: 780px) {
     .bg-responsive {
         height: 100vh !important;
