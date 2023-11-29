@@ -12,6 +12,7 @@
     /* --clr-lighter: #341D02; */
     --clr-lighter: hsla(32, 89%, 11%, 0.9);
     --clr-darker: #3E342B;
+    --clr-new: #2D2A33;
 }
 
 body {
@@ -20,10 +21,14 @@ body {
 
 .nav-link {
     font-family: var(--ff-other);
-} 
+}
 
 .logo {
     width: 3rem;
+}
+
+.headers {
+    font-family: var(--ff-other);
 }
 
 .bg-color {
@@ -39,6 +44,56 @@ body {
     font-family: var(--ff-other) !important;
 }
 
+.header-bg {
+    /* z-index: -100; */
+}
+
+.header-text {
+    /* margin-top: -2.65rem !important; */
+}
+
+.services-header {
+    font-family: var(--ff-header);
+}
+
+/* .architectural {
+    background-color: var(--clr-dark);
+} */
+
+/* Colors */
+
+.bgc-primary {
+    background-color: var(--clr-primary);
+}
+
+
+.bgc-dark {
+    background-color: var(--clr-dark);
+}
+
+.bgc-darker {
+    background-color: var(--clr-darker);
+}
+
+.bgc-light {
+    background-color: var(--clr-light);
+}
+
+.bgc-lighter {
+    background-color: var(--clr-lighter);
+}
+
+.bgc-other {
+    background-color: var(--clr-other);
+}
+
+.bgc-primary-light {
+    background-color: var(--clr-primary-light);
+}
+
+.bgc-new {
+    background-color: var(--clr-new);
+}
 
 @media (max-wdth: 780px) {
     .bg-responsive {
