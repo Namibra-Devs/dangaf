@@ -109,13 +109,29 @@ body {
     font-family: var(--ff-other);
 }
 
-@media (max-wdth: 780px) {
-    .bg-responsive {
-        height: 100vh !important;
-    }
+.quick-link, .list-none {
+    list-style-type: none;
+}
 
-    .btn-request {
+.quick-link {
+    margin-left: -2rem;
+}
+
+.logo-light {
+    width: 5rem;
+}
+
+.tel {
+    margin-bottom: -.1rem;
+}
+
+@media (max-width: 780px) {
+    /* .bg-responsive {
+        height: 100vh !important;
+    } */
+
+    /* .btn-request {
         display: block !important;
         width: 100vw !important;
-    }
+    } */
 }
