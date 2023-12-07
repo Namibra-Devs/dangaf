@@ -1,52 +1,151 @@
 :root {
-    --ff-header: 'IBM Plex Sans', sans-serif;
-    --ff-body: 'Inter', sans-serif;
-    --ff-other: 'Plus Jakarta Sans', sans-serif;
+  --ff-header: "IBM Plex Sans", sans-serif;
+  --ff-body: "Inter", sans-serif;
+  --ff-other: "Plus Jakarta Sans", sans-serif;
 
-    /* Colors */
-    --clr-primary: #E47A00;
-    --clr-dark: #2E2C2C;
-    --clr-light: #FFB764;
-    --clr-other: #E48415;
-    --clr-primary-light: #F5A951;
-    /* --clr-lighter: #341D02; */
-    --clr-lighter: hsla(32, 89%, 11%, 0.9);
-    --clr-darker: #3E342B;
+  /* Colors */
+  --clr-primary: #e47a00;
+  --clr-dark: #2e2c2c;
+  --clr-light: #ffb764;
+  --clr-other: #e48415;
+  --clr-primary-light: #f5a951;
+  /* --clr-lighter: #341D02; */
+  --clr-lighter: hsla(32, 89%, 11%, 0.9);
+  --clr-darker: #3e342b;
+  --clr-new: #2d2a33;
 }
 
 body {
-    font-family: var(--ff-body) !important;
+  font-family: var(--ff-body) !important;
+}
+
+.header-text {
+  /* background: url("./public/asserts/images/headersbg.svg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* margin-top: -3rem; */
+}
+
+.ml {
+  margin-bottom: -3rem;
+}
+.ml2 {
+  margin-bottom: -5rem;
 }
 
 .nav-link {
-    font-family: var(--ff-other);
-} 
+  font-family: var(--ff-other);
+}
 
 .logo {
-    width: 3rem;
+  width: 3rem;
+}
+
+.headers {
+  font-family: var(--ff-other);
 }
 
 .bg-color {
-    background-color: var(--clr-lighter);
+  background-color: var(--clr-lighter);
 }
 
 .header-title {
-    font-family: var(--ff-header);
+  font-family: var(--ff-header);
 }
 
 .btn-request {
-    background: var(--clr-primary);
-    font-family: var(--ff-other) !important;
+  background: var(--clr-primary);
+  font-family: var(--ff-other) !important;
 }
 
+.header-bg {
+  /* z-index: -100; */
+}
 
-@media (max-wdth: 780px) {
-    .bg-responsive {
+.header-text {
+  /* margin-top: -2.65rem !important; */
+}
+
+.services-header {
+  font-family: var(--ff-header);
+}
+
+/* .architectural {
+    background-color: var(--clr-dark);
+} */
+
+/* Colors */
+
+.bgc-primary {
+  background-color: var(--clr-primary);
+}
+
+.bgc-dark {
+  background-color: var(--clr-dark);
+}
+
+.bgc-darker {
+  background-color: var(--clr-darker);
+}
+
+.bgc-light {
+  background-color: var(--clr-light);
+}
+
+.bgc-lighter {
+  background-color: var(--clr-lighter);
+}
+
+.bgc-other {
+  background-color: var(--clr-other);
+}
+
+.bgc-primary-light {
+  background-color: var(--clr-primary-light);
+}
+
+.bgc-new {
+  background-color: var(--clr-new);
+}
+
+/* Font Family */
+
+.ff-body {
+  font-family: var(--ff-body);
+}
+
+.ff-header {
+  font-family: var(--ff-header);
+}
+
+.ff-other {
+  font-family: var(--ff-other);
+}
+
+.quick-link,
+.list-none {
+  list-style-type: none;
+}
+
+.quick-link {
+  margin-left: -2rem;
+}
+
+.logo-light {
+  width: 5rem;
+}
+
+.tel {
+  margin-bottom: -0.1rem;
+}
+
+@media (max-width: 780px) {
+  /* .bg-responsive {
         height: 100vh !important;
-    }
+    } */
 
-    .btn-request {
+  /* .btn-request {
         display: block !important;
         width: 100vw !important;
-    }
+    } */
 }
