@@ -139,13 +139,24 @@ body {
   margin-bottom: -0.1rem;
 }
 
+.bg-responsive {
+    height: 100% !important;
+}
+
 @media (max-width: 780px) {
-  /* .bg-responsive {
-        height: 100vh !important;
-    } */
+  .bg-responsive {
+        /* height: 10rem !important; */
+    }
+
 
   /* .btn-request {
         display: block !important;
         width: 100vw !important;
     } */
+}
+
+.link-active .fw-link {
+    border-bottom: 2px solid var(--clr-dark);
+    font-weight: 600;
+    border-radius: 0;
 }
