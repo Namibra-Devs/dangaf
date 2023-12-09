@@ -140,7 +140,7 @@ body {
 }
 
 .bg-responsive {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 .carousel-indicators {
@@ -153,38 +153,38 @@ body {
 .carousel-indicators button {
   margin: 0 5px !important;
   border-radius: 100% !important;
-  width: 25px !important;
-  height: 5px !important;
+  width: .6rem !important;
+  height: .6rem !important;
+  border: 0 !important;
 
-  background : #525151 !important;
-
+  background: #525151 !important;
 }
 
 .carousel-indicators button.active {
   background-color: var(--clr-dark) !important;
 }
 
-
-
-
 @media (max-width: 780px) {
   .carousel-np {
-    position: relative;
+    display: flex;
     justify-content: center;
     margin-top: 30rem;
     height: 5rem !important;
-    /* background-color: red; */
+    padding: 0 2rem;
   }
 
+  .carousel-np .carousel-control-prev,
+  .carousel-np .carousel-control-next {
+    position: relative;
+    margin: 0 1rem;
+  }
   .carousel-indicators {
-      margin-top: 1rem !important;
-
+    margin-top: 1rem !important;
   }
-  
 }
 
 .link-active .fw-link {
-    border-bottom: 2px solid var(--clr-dark);
-    font-weight: 600;
-    border-radius: 0;
+  border-bottom: 2px solid var(--clr-dark);
+  font-weight: 600;
+  border-radius: 0;
 }
