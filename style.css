@@ -143,16 +143,44 @@ body {
     height: 100% !important;
 }
 
+.carousel-indicators {
+  position: relative !important;
+  display: flex;
+  justify-content: center;
+  margin-top: 30rem !important;
+}
+
+.carousel-indicators button {
+  margin: 0 5px !important;
+  border-radius: 100% !important;
+  width: 25px !important;
+  height: 5px !important;
+
+  background : #525151 !important;
+
+}
+
+.carousel-indicators button.active {
+  background-color: var(--clr-dark) !important;
+}
+
+
+
+
 @media (max-width: 780px) {
-  .bg-responsive {
-        /* height: 10rem !important; */
-    }
+  .carousel-np {
+    position: relative;
+    justify-content: center;
+    margin-top: 30rem;
+    height: 5rem !important;
+    /* background-color: red; */
+  }
 
+  .carousel-indicators {
+      margin-top: 1rem !important;
 
-  /* .btn-request {
-        display: block !important;
-        width: 100vw !important;
-    } */
+  }
+  
 }
 
 .link-active .fw-link {
