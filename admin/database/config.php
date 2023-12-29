@@ -13,7 +13,7 @@ $dbhost = 'localhost';
 //port
 $port = 3308;
 // Database Name
-$dbname = 'sms';
+$dbname = 'dangafdb';
 
 // Database Username
 $dbuser = 'root';

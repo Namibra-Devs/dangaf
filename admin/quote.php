@@ -19,8 +19,8 @@
 								<th>Full Name</th>
 								<th width="180">Email</th>
 								<th>Phone</th>
-								<th width="200">Home Address</th>
-								<th>Organization</th>
+								<th>Project Type</th>
+								<th>Project Details</th>
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -30,6 +30,7 @@
 							$statement = $pdo->prepare("SELECT * FROM tbl_volunteer");
 							$statement->execute();
 							$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 							foreach ($result as $row) {
 								$i++;
 							?>
@@ -38,8 +39,8 @@
 									<td><?php echo $row['fullname']; ?></td>
 									<td><?php echo $row['email']; ?></td>
 									<td><?php echo $row['phone']; ?></td>
-									<td><?php echo $row['address']; ?></td>
-									<td><?php echo $row['organisation']; ?></td>
+									<td><?php echo $row['type']; ?></td>
+									<td><?php echo $row['details']; ?></td>
 									<td>
 										<a href="#" class="btn btn-danger btn-xs" data-href="volunteer-delete.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>
 									</td>

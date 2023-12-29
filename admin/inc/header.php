@@ -215,13 +215,14 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/"
 										} ?>">
 						<a href="#">
 							<i class="fa fa-hand-o-right"></i>
-							<span>Volunteer</span>
+							<span>Project Quotes</span>
 							<span class="pull-right-container">
 								<i class="fa fa-angle-left pull-right"></i>
 							</span>
 						</a>
 						<ul class="treeview-menu">
-							<li><a href="volunteer.php"><i class="fa fa-circle-o"></i>Volunteer</a></li>
+							<li><a href="quote.php"><i class="fa fa-circle-o"></i>Quotes</a></li>
+							<li><a href="quote.php"><i class="fa fa-circle-o"></i>Categories</a></li>
 						</ul>
 					</li>
 
