@@ -32,7 +32,7 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/"
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Spendy's Bulwark - Admin Panel</title>
+	<title>Dangaf - Admin Panel</title>
 
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -209,8 +209,8 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/"
 					</li>
 
 
-					<!-- volunteer -->
-					<li class="treeview <?php if (($cur_page == 'volunteer-category.php') || ($cur_page == 'volunteer-category-edit.php') || ($cur_page == 'volunteer-add.php') || ($cur_page == 'volunteer.php') || ($cur_page == 'volunteer-edit.php')) {
+					<!-- Quotes -->
+					<li class="treeview <?php if (($cur_page == 'quote-category.php') || ($cur_page == 'quote-category-edit.php') || ($cur_page == 'quote-add.php') || ($cur_page == 'quote.php') || ($cur_page == 'quote-edit.php')) {
 											echo 'active';
 										} ?>">
 						<a href="#">
@@ -222,7 +222,7 @@ $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/"
 						</a>
 						<ul class="treeview-menu">
 							<li><a href="quote.php"><i class="fa fa-circle-o"></i>Quotes</a></li>
-							<li><a href="quote.php"><i class="fa fa-circle-o"></i>Categories</a></li>
+							<li><a href="quote-category.php"><i class="fa fa-circle-o"></i>Quote Types</a></li>
 						</ul>
 					</li>
 

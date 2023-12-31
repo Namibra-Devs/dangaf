@@ -209,12 +209,11 @@ if (isset($_POST['form_home_about'])) {
             // updating the database
             $statement = $pdo->prepare("UPDATE tbl_settings SET home_about_title=?, home_about_img=?, home_about_content=? WHERE id=1");
             $statement->execute(array($_POST['home_about_title'], $final_name, $_POST['home_about_content']));
-        }else {
+        } else {
             $statement = $pdo->prepare("UPDATE tbl_settings SET home_about_title=?, home_about_content=? WHERE id=1");
             $statement->execute(array($_POST['home_about_title'], $_POST['home_about_content']));
         }
-            $success_message = 'About Section is updated successfully.';
-        
+        $success_message = 'About Section is updated successfully.';
     }
 }
 
@@ -310,8 +309,8 @@ foreach ($result as $row) {
     $meta_keyword_home           = $row['meta_keyword_home'];
     $meta_description_home       = $row['meta_description_home'];
     $home_about_title            = $row['home_about_title'];
-	$home_about_img              = $row['home_about_img'];
-	$home_about_content          = $row['home_about_content'];
+    $home_about_img              = $row['home_about_img'];
+    $home_about_content          = $row['home_about_content'];
     $home_title_service          = $row['home_title_service'];
     $home_subtitle_service       = $row['home_subtitle_service'];
     $home_status_service         = $row['home_status_service'];
@@ -450,7 +449,7 @@ foreach ($result as $row) {
                             <div class="box box-info">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="" class="col-sm-2 control-label">Footer - About Us </label>
+                                        <label for="" class="col-sm-2 control-label">Text - About Us </label>
                                         <div class="col-sm-9">
                                             <textarea class="form-control editor" name="footer_about"><?php echo $footer_about; ?></textarea>
                                         </div>
@@ -595,7 +594,7 @@ foreach ($result as $row) {
                             </div>
                         </form>
 
-                <!-- ABOUT SECTION -->
+                        <!-- ABOUT SECTION -->
                         <h3>About Section</h3>
                         <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                             <div class="box box-info">

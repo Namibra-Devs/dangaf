@@ -2,8 +2,38 @@
 require_once('./admin/database/config.php');
 require_once('./public/inc/auxilliaries.php');
 
-$Admin = new Admin($pdo, "tbl_testimonials");
-$fetchTestimony = $Admin->readAll('id');
+$Testimonials = new Admin($pdo, "tbl_testimonials");
+$fetchTestimony = $Testimonials->readAll('id');
+
+$Blogs = new Admin($pdo, "tbl_blogs");
+$fetchBlogs = $Blogs->readWithLimit(3, 'blog_id');
+
+$quoteCategory = new Admin($pdo, "tbl_quote_category");
+$fetchQuoteCategory = $quoteCategory->readAll('quote_category_id');
+
+if (isset($_POST['submit'])) {
+    $quote = new Admin($pdo, "tbl_quote");
+
+
+    $firstname = $_POST['firstname'];
+    $details = $_POST['details'];
+    $type = $_POST['type'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+
+
+    $quoteInfo = [
+        'firstname' => $firstname,
+        'details' => $details,
+        'type' => $type,
+        'phone' => $phone,
+        'email' => $email,
+    ];
+
+    if ($quote->create($quoteInfo)) {
+        $message = 'Quote submitted Successfully';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +77,7 @@ $fetchTestimony = $Admin->readAll('id');
             <div class="d-flex justify-content-between w-100">
 
                 <div class="logo">
-                    <a class="navbar-brand" href="./index.html">
+                    <a class="navbar-brand" href="./index.php">
                         <img src="./public/asserts/images/logo.svg" alt="" class="image-fluid logo">
                     </a>
 
@@ -62,19 +92,19 @@ $fetchTestimony = $Admin->readAll('id');
                 <div class="w-100">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-2 w-100">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./about.html">About Us</a>
+                            <a class="nav-link active" aria-current="page" href="./about.php">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./services.html">Services</a>
+                            <a class="nav-link" href="./services.php">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./portfolio.html">Portfolio</a>
+                            <a class="nav-link" href="./portfolio.php">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./blog.html">Blog</a>
+                            <a class="nav-link" href="./blog.php">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact us</a>
+                            <a class="nav-link" href="./contact.php">Contact us</a>
                         </li>
 
                     </ul>
@@ -257,6 +287,7 @@ $fetchTestimony = $Admin->readAll('id');
                 <div class="card-img-overlay text-center d-flex justify-content-center align-items-md-center align-items-start mt-5 mt-lg-0">
                     <div class="bg-light col-md-8 px-4 py-5">
                         <div class="headers mb-5 text-center">
+                            <h4 class="text-success"><?php echo isset($message) ? $message : ''; ?></h4>
 
                             <svg class="ml d-lg-inline d-none" width="260" height="60" viewBox="0 0 382 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M382 47H0V113H382V47Z" fill="#FFB764" mask="url(#path-1-inside-1_1966_6550)" />
@@ -268,38 +299,42 @@ $fetchTestimony = $Admin->readAll('id');
 
                             <div class="fs-3 fw-bold header-text text-center">Request
                                 A Quote</div>
+
                         </div>
-                        <form class="row g-3 needs-validation justify-content-center align-items-center text-start" novalidate>
+
+                        <form method="POST" action="" class="row g-3 needs-validation justify-content-center align-items-center text-start" novalidate>
                             <div class="col-md-5">
                                 <label for="validationCustom01" class="form-label">First name</label>
-                                <input type="text" class="form-control rounded-0" id="validationCustom01" placeholder="John Doe" required>
+                                <input type="text" name="firstname" class="form-control rounded-0" id="validationCustom01" placeholder="John Doe" required>
 
                             </div>
                             <div class="col-md-5">
                                 <label for="validationCustom02" class="form-label">Email</label>
-                                <input type="email" class="form-control rounded-0" id="validationCustom02" placeholder="example@mail.com" required>
+                                <input type="email" name="email" class="form-control rounded-0" id="validationCustom02" placeholder="example@mail.com" required>
 
                             </div>
                             <div class="col-md-5">
                                 <label for="validationCustom03" class="form-label">Phone Number</label>
-                                <input type="text" class="form-control rounded-0" id="validationCustom03" required>
+                                <input type="text" name="phone" class="form-control rounded-0" id="validationCustom03" required>
 
                             </div>
                             <div class="col-md-5">
                                 <label for="validationCustom04" class="form-label">Project Type</label>
-                                <select class="form-select rounded-0" id="validationCustom04" required>
+                                <select class="form-select rounded-0" name="type" id="validationCustom04" required>
                                     <option selected disabled value="">Choose...</option>
-                                    <option>...</option>
+                                    <?php foreach ($fetchQuoteCategory as $category) { ?>
+                                        <option value="<?php echo $category['quote_category_name'];  ?>"><?php echo $category['quote_category_name']  ?></option>
+                                    <?php } ?>
                                 </select>
 
                             </div>
 
                             <div class="col-md-10">
                                 <label for="validationCustom03" class="form-label">Project Details</label>
-                                <textarea type="text" class="form-control rounded-0" id="validationCustom03" required></textarea>
+                                <textarea type="text" name="details" class="form-control rounded-0" id="validationCustom03" required></textarea>
 
                                 <div class="col-12 mt-4">
-                                    <button class="btn bgc-new text-light w-100 rounded-0" type="submit">Request
+                                    <button class="btn bgc-new text-light w-100 rounded-0" name="submit" type="submit">Request
                                         Quote</button>
                                 </div>
                             </div>
@@ -434,9 +469,7 @@ $fetchTestimony = $Admin->readAll('id');
                             <?php
                                 $i++;
                             } ?>
-                            <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button> -->
+
                         </div>
 
                     </div>
@@ -460,38 +493,21 @@ $fetchTestimony = $Admin->readAll('id');
                     <div class="fs-3 fw-bold header-text text-center">Our Blog</div>
                 </div>
                 <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
-
-                    <div class="card col-lg-3 col-md-4 justify-content-center align-items-center">
-                        <img src="./public/asserts/images/building/workers.webp" class="card-img-top image-fluid w-100" alt="...">
-                        <div class="card-body border-0">
-                            <p class="card-text date text-muted fs-6">
-                                <span class="day">03</span>/
-                                <span class="month">10</span>/
-                                <span class="year">2023</span>
-                            </p>
-                            <h5 class="card-title fw-bold">Lorem ipsum diolor emet atet lorem </h5>
-                            <p class="card-text">Lorem ipsum diolor emet atet lorem ipsum dilore amet lorem iosum dilor
-                                amet lorem ipsum diilor amet ncdnd...</p>
-                            <a href="#" class="btn">Read More</a>
+                    <?php foreach ($fetchBlogs as $blog) { ?>
+                        <div class="card col-lg-3 col-md-4 justify-content-center align-items-center">
+                            <img src="./assets/uploads/<?php echo $blog['photo'] ?>" class="card-img-top image-fluid w-100" alt="...">
+                            <div class="card-body border-0">
+                                <p class="card-text date text-muted fs-6">
+                                    <?php echo $blog['blog_date'] ?>
+                                </p>
+                                <h5 class="card-title fw-bold"><?php echo $blog['blog_title'] ?>"</h5>
+                                <p class="card-text"><?php echo $blog['blog_content_short'] ?>...</p>
+                                <a href="./blog?id=<?php echo $blog['blog_id'] ?>;" class="btn">Read More</a>
+                            </div>
                         </div>
-                    </div>
+                    <?php } ?>
 
-                    <div class="card col-lg-3 col-md-4 justify-content-center align-items-center">
-                        <img src="./public/asserts/images/building/foundation.webp" class="card-img-top image-fluid w-100" alt="...">
-                        <div class="card-body">
-                            <p class="card-text date text-muted fs-6">
-                                <span class="day">03</span>/
-                                <span class="month">10</span>/
-                                <span class="year">2023</span>
-                            </p>
-                            <h5 class="card-title fw-bold">Lorem ipsum diolor emet atet lorem </h5>
-                            <p class="card-text">Lorem ipsum diolor emet atet lorem ipsum dilore amet lorem iosum dilor
-                                amet lorem ipsum diilor amet ncdnd...</p>
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="card col-lg-3 col-md-4 justify-content-center align-items-center">
+                    <!-- <div class="card col-lg-3 col-md-4 justify-content-center align-items-center">
                         <img src="./public/asserts/images/building/foundation3.webp" class="card-img-top image-fluid w-100" alt="...">
                         <div class="card-body">
                             <p class="card-text date text-muted fs-6">
@@ -504,12 +520,12 @@ $fetchTestimony = $Admin->readAll('id');
                                 amet lorem ipsum diilor amet ncdnd...</p>
                             <a href="#" class="btn">Read More</a>
                         </div>
-                    </div>
+                    </div>  -->
 
                 </div>
 
                 <div class="mt-5 text-center">
-                    <a href="" class="btn rounded-0 border-0 ff-other see-all">See All</a>
+                    <a href="./blog.php" class="btn rounded-0 border-0 ff-other see-all">See All</a>
                 </div>
             </div>
         </div>
@@ -537,12 +553,12 @@ $fetchTestimony = $Admin->readAll('id');
                 <div class="quick-links mt-lg-0 mt-5 col-lg-2">
                     <h4 class="fs-5 fw-bold">Quick Links</h4>
                     <ul class="quick-link mt-3 text-start">
-                        <li class="my-1"><a href="./about.html" class="text-light text-decoration-none">Abouut Us</a></li>
-                        <li class="my-1"><a href="./services.html" class="text-light text-decoration-none">Our Services</a></li>
-                        <li class="my-1"><a href="./careers.html" class="text-light text-decoration-none">Portfolio</a></li>
-                        <li class="my-1"><a href="./applications.html" class="text-light text-decoration-none">Blogs</a>
+                        <li class="my-1"><a href="./about.php" class="text-light text-decoration-none">Abouut Us</a></li>
+                        <li class="my-1"><a href="./services.php" class="text-light text-decoration-none">Our Services</a></li>
+                        <li class="my-1"><a href="./careers.php" class="text-light text-decoration-none">Portfolio</a></li>
+                        <li class="my-1"><a href="./applications.php" class="text-light text-decoration-none">Blogs</a>
                         </li>
-                        <li class="my-1"><a href="./contact.html" class="text-light text-decoration-none">Contact Us</a></li>
+                        <li class="my-1"><a href="./contact.php" class="text-light text-decoration-none">Contact Us</a></li>
                     </ul>
                 </div>
 
