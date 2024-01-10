@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3308
--- Generation Time: Jul 28, 2023 at 01:28 AM
+-- Generation Time: Jan 10, 2024 at 06:39 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -18,6 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+-- Database: `dangafdb`
 --
 
 -- --------------------------------------------------------
@@ -47,9 +48,9 @@ CREATE TABLE `tbl_blogs` (
 --
 
 INSERT INTO `tbl_blogs` (`blog_id`, `blog_title`, `blog_slug`, `blog_content`, `blog_content_short`, `blog_date`, `photo`, `category_id`, `publisher`, `total_view`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
-(1, 'The challanges of being a writter', 'the-challanges-of-being-a-writter', '<p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><br></p>', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat ', '29-06-2023', 'blog-1.png', 6, 'Abdul', 0, '', '', ''),
-(2, 'Benefits of attending events', 'benefits-of-attending-events', '<p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><br></p>', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident,', '29-06-2023', 'blog-2.png', 6, 'Abdul', 0, '', '', ''),
-(3, 'Talk It Out With Radio', 'talk-it-out-with-radio', '<p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident.</span></p><p><br></p><p><span style=\"color: inherit; font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 36px;\">Intro</span></p><p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\"><br></span><br></p>', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident,', '29-06-2023', 'blog-3.png', 6, 'Abdul', 0, '', '', '');
+(1, 'The challanges of being a writter', 'the-challanges-of-being-a-writter', '<p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><br></p>', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', '29-06-2023', 'blog-1.png', 6, 'Abdul', 0, '', '', ''),
+(2, 'Benefits of attending events', 'benefits-of-attending-events', '<p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><br></p>', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', '29-06-2023', 'blog-2.png', 6, 'Abdul', 0, '', '', ''),
+(3, 'Talk It Out With Radio', 'talk-it-out-with-radio', '<p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident.</span></p><p><br></p><p><span style=\"color: inherit; font-family: \"Source Sans Pro\", sans-serif; font-size: 36px;\">Intro</span></p><p><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 12.855px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\">proident,</span><span style=\"color: rgb(33, 37, 41); font-family: Poppins, sans-serif; font-size: 0.857em;\"><br></span><br></p>', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', '29-06-2023', 'blog-3.png', 6, 'Abdul', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,8 @@ CREATE TABLE `tbl_designation` (
 INSERT INTO `tbl_designation` (`designation_id`, `designation_name`) VALUES
 (2, 'CEO'),
 (5, 'Founder'),
-(6, 'Technical Lead');
+(6, 'Technical Lead'),
+(7, 'Organizer');
 
 -- --------------------------------------------------------
 
@@ -355,6 +357,57 @@ INSERT INTO `tbl_programme_category` (`programme_category_id`, `programme_catego
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_quote`
+--
+
+CREATE TABLE `tbl_quote` (
+  `id` int(250) NOT NULL,
+  `firstname` varchar(250) NOT NULL,
+  `details` text NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tbl_quote`
+--
+
+INSERT INTO `tbl_quote` (`id`, `firstname`, `details`, `type`, `phone`, `email`) VALUES
+(1, 'Charles Bih', 'kumasi, ghana', '', '0242155123', 'charlesbih@gmail.com'),
+(14, 'Nana Kwame Boakye', 'Takoradi, y road', 'BTA Group of Companies', '0556558655', 'nana@ymail.com'),
+(17, 'Charles Asare', 'karl@gg.com', '', '03456786789', 'bih@gg.com'),
+(18, 'Rashad', 'Culpa animi non il', '...', '+1 (145) 897-7456', 'qycipyluh@mailinator.com'),
+(19, 'Hermione', 'Laboriosam vel quas', '...', '+1 (432) 243-9275', 'jesokepaky@mailinator.com'),
+(20, 'Winter', 'Aperiam id fugiat m', 'Architectural Design', '+1 (711) 778-3211', 'kymyx@mailinator.com'),
+(21, 'Yaw ', 'project details for contact php', 'Structural Design', '0554676723', 'yaw@gmail.ka');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_quote_category`
+--
+
+CREATE TABLE `tbl_quote_category` (
+  `quote_category_id` int(11) NOT NULL,
+  `quote_category_name` varchar(255) NOT NULL,
+  `quote_category_slug` varchar(255) NOT NULL,
+  `meta_title` varchar(255) NOT NULL,
+  `meta_keyword` mediumtext NOT NULL,
+  `meta_description` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tbl_quote_category`
+--
+
+INSERT INTO `tbl_quote_category` (`quote_category_id`, `quote_category_name`, `quote_category_slug`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
+(1, 'Architectural Design', 'architectural-design', '', '', ''),
+(4, 'Structural Design', 'structural-design', '', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_settings`
 --
 
@@ -416,15 +469,17 @@ CREATE TABLE `tbl_settings` (
   `website_name` varchar(255) NOT NULL,
   `home_about_title` varchar(200) NOT NULL,
   `home_about_img` varchar(200) NOT NULL,
-  `home_about_content` varchar(2000) NOT NULL
+  `home_about_content` varchar(2000) NOT NULL,
+  `our_vision` varchar(2000) DEFAULT NULL,
+  `our_mission` varchar(2000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tbl_settings`
 --
 
-INSERT INTO `tbl_settings` (`id`, `logo`, `favicon`, `footer_about`, `footer_copyright`, `contact_address`, `contact_email`, `contact_phone`, `contact_fax`, `contact_map_iframe`, `total_recent_news_footer`, `total_popular_news_footer`, `total_recent_news_sidebar`, `total_popular_news_sidebar`, `total_recent_news_home_page`, `meta_title_home`, `meta_keyword_home`, `meta_description_home`, `home_title_service`, `home_subtitle_service`, `home_status_service`, `home_title_team_member`, `home_subtitle_team_member`, `home_status_team_member`, `home_title_testimonial`, `home_subtitle_testimonial`, `home_status_testimonial`, `home_photo_testimonial`, `home_title_news`, `home_subtitle_news`, `home_status_news`, `home_title_partner`, `home_subtitle_partner`, `home_status_partner`, `mod_rewrite`, `newsletter_title`, `newsletter_text`, `newsletter_photo`, `newsletter_status`, `banner_search`, `banner_category`, `counter_1_title`, `counter_1_value`, `counter_2_title`, `counter_2_value`, `counter_3_title`, `counter_3_value`, `counter_4_title`, `counter_4_value`, `counter_photo`, `counter_status`, `color`, `preloader`, `active_editor`, `website_name`, `home_about_title`, `home_about_img`, `home_about_content`) VALUES
-(1, 'logo.png', 'favicon.png', '<p>Creating unforgettable experiences that celebrate African culture and bring people together.</p>\r\n', 'Copyright 2023. All Rights Reserved.', 'ABC Steet, ABC', 'hello@jmstreetlifestudios.com', '+2338096542356', '', '', 3, 3, 4, 4, 7, 'Transforming Africa through entertainment, storytelling, and talent development.', 'transforming, africa, entertainment, storytelling, talent, development.', 'We are a production company dedicated to transforming Africa through exceptional events, storytelling, and talent development, showcasing the beauty and richness of the African culture to the world.', 'Our Services', 'Check Out All Our Consulting Services', 'Show', 'Team Members', 'Meet with All Our Qualified Team Members', 'Show', 'Testimonial', 'Our Happy Clients Tell About Us', 'Show', 'testimonial.jpg', 'Latest News', 'See All Our Updated and Latest News', 'Show', 'Our Partners', 'All Our Company Partners are Listed Below', 'Show', 'On', 'Newsletter', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid fugit expedita, iure ullam cum vero ex sint aperiam maxime.', 'newsletter.jpg', 'Show', 'banner_search.jpg', 'banner_category.jpg', 'Years of Experience', '3', 'Events Organized', '100', 'Team Members', '50', '', '', 'counter.jpg', 'Show', '2795D0', 'Off', 'Summernote', 'Spendys Bulwark', 'Who We Are', 'home_about_img.png', '<p><b>JM STREET-LIFE STUDIOS</b> is a leading production company that specializes in producing top-notch entertainment and lifestyle events. We produce a wide range of events including music festivals, art shows, parties, corporate events, weddings, and more. Our team is dedicated to providing unique and memorable experiences for our clients and guests.</p><br>\r\n<p>At <b>JM STREET-LIFE STUDIOS</b>, we have a deep passion for transforming Africa into a better place, and we believe that our productions can play a significant role in achieving this goal. We are committed to using our platform to showcase the beauty, diversity, and richness of African culture to the world.</p>');
+INSERT INTO `tbl_settings` (`id`, `logo`, `favicon`, `footer_about`, `footer_copyright`, `contact_address`, `contact_email`, `contact_phone`, `contact_fax`, `contact_map_iframe`, `total_recent_news_footer`, `total_popular_news_footer`, `total_recent_news_sidebar`, `total_popular_news_sidebar`, `total_recent_news_home_page`, `meta_title_home`, `meta_keyword_home`, `meta_description_home`, `home_title_service`, `home_subtitle_service`, `home_status_service`, `home_title_team_member`, `home_subtitle_team_member`, `home_status_team_member`, `home_title_testimonial`, `home_subtitle_testimonial`, `home_status_testimonial`, `home_photo_testimonial`, `home_title_news`, `home_subtitle_news`, `home_status_news`, `home_title_partner`, `home_subtitle_partner`, `home_status_partner`, `mod_rewrite`, `newsletter_title`, `newsletter_text`, `newsletter_photo`, `newsletter_status`, `banner_search`, `banner_category`, `counter_1_title`, `counter_1_value`, `counter_2_title`, `counter_2_value`, `counter_3_title`, `counter_3_value`, `counter_4_title`, `counter_4_value`, `counter_photo`, `counter_status`, `color`, `preloader`, `active_editor`, `website_name`, `home_about_title`, `home_about_img`, `home_about_content`, `our_vision`, `our_mission`) VALUES
+(1, 'logo.png', 'favicon.png', '<p><span style=\"color: rgb(33, 37, 41); font-family: Inter, sans-serif; font-size: 16px;\">At DANGAF CONSTRUCTION LTD, we build more than structures; we construct legacies. Our journey is woven with a rich history, a steadfast mission to redefine excellence, a vision to innovate, and values that guide every brick we lay. </span><br></p>\r\n', 'Copyright 2024. All Rights Reserved.', 'Block 16, Tamale Street, Ghana', 'info@dangafconstructions.co', '+234303857203', '09:00 AM - 05:00 PM', '', 3, 3, 4, 4, 7, 'Transforming Africa through entertainment, storytelling, and talent development.', 'transforming, africa, entertainment, storytelling, talent, development.', 'We are a production company dedicated to transforming Africa through exceptional events, storytelling, and talent development, showcasing the beauty and richness of the African culture to the world.', 'Our Services', 'Check Out All Our Consulting Services', 'Show', 'Team Members', 'Meet with All Our Qualified Team Members', 'Show', 'Testimonial', 'Our Happy Clients Tell About Us', 'Show', 'testimonial.jpg', 'Latest News', 'See All Our Updated and Latest News', 'Show', 'Our Partners', 'All Our Company Partners are Listed Below', 'Show', 'On', 'Newsletter', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid fugit expedita, iure ullam cum vero ex sint aperiam maxime.', 'newsletter.jpg', 'Show', 'banner_search.jpg', 'banner_category.jpg', 'Years of Experience', '3', 'Events Organized', '100', 'Team Members', '50', '', '', 'counter.jpg', 'Show', '2795D0', 'Off', 'Summernote', 'DANGAF', 'Who We Are', 'home_about_img.png', 'At DANGAF CONSTRUCTION LTD, we build more than structures; we construct legacies. Our journey is woven with a rich history, a steadfast mission to redefine excellence, a vision to innovate, and values that guide every brick we lay yes. ', 'our vission Lorem ipsum diolor emet atet lorem ipsum dilore amet lorem iosum dilor amet lorem ipsum diilor amet ncdnd dnjsdkkdls jdslkdsp;mkldkmmckmm lksdls slddslkksd lLorem ipsum diolor emet atet', 'our mission Lorem ipsum diolor emet atet lorem ipsum dilore amet lorem iosum dilor amet lorem ipsum diilor amet ncdnd dnjsdkkdls jdslkdsp;mkldkmmckmm lksdls slddslkksd lLorem ipsum diolor emet atet');
 
 -- --------------------------------------------------------
 
@@ -467,13 +522,13 @@ CREATE TABLE `tbl_social` (
 --
 
 INSERT INTO `tbl_social` (`social_id`, `social_name`, `social_url`, `social_icon`) VALUES
-(1, 'Facebook', '', 'fa fa-facebook'),
-(2, 'Twitter', '#', 'fa fa-twitter'),
-(3, 'LinkedIn', '#', 'fa fa-linkedin'),
+(1, 'Facebook', 'https://www.facebook.com/dangaf', 'fa fa-facebook'),
+(2, 'Twitter', 'https://www.twitter.com/dangaf', 'fa fa-twitter'),
+(3, 'LinkedIn', 'https://www.linkedin.com/dangaf', 'fa fa-linkedin'),
 (4, 'Google Plus', '#', 'fa fa-google-plus'),
 (5, 'Pinterest', '#', 'fa fa-pinterest'),
-(6, 'YouTube', 'facebook.com/charlesowusubih', 'fa fa-youtube'),
-(7, 'Instagram', '', 'fa fa-instagram'),
+(6, 'YouTube', '', 'fa fa-youtube'),
+(7, 'Instagram', 'https://www.instagram.com/dangaf', 'fa fa-instagram'),
 (8, 'Tumblr', '', 'fa fa-tumblr'),
 (9, 'Flickr', '', 'fa fa-flickr'),
 (10, 'Reddit', '', 'fa fa-reddit'),
@@ -547,10 +602,9 @@ CREATE TABLE `tbl_team_member` (
 --
 
 INSERT INTO `tbl_team_member` (`id`, `name`, `slug`, `designation_id`, `photo`, `banner`, `degree`, `detail`, `facebook`, `twitter`, `linkedin`, `youtube`, `google_plus`, `instagram`, `flickr`, `address`, `practice_location`, `phone`, `email`, `website`, `status`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
-(7, 'Abdul', 'abdul', 2, 'team-member-7.png', 'team-member-banner-7.png', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Active', '', '', ''),
-(8, 'Moses Asamoah', 'moses-asamoah', 5, 'team-member-8.png', 'team-member-banner-8.png', '', '', '#', '#', '', '', '', '', '', '', '', '', '', '', 'Active', '', '', ''),
-(9, 'Kelvin Yaboah', 'kelvin', 6, 'team-member-9.png', 'team-member-banner-9.png', '', '', '#', '#', '#', '', '', '', '', '', '', '', '', '', 'Active', '', '', ''),
-(10, 'Charles Bih', 'charles-bih', 6, 'team-member-10.jpg', 'team-member-banner-10.jpg', 'Mphill', '<p>a technical lead</p>', '', 'https://web.facebook.com/charlesowusubih', 'https://www.linkedin.com/in/charles-owusu-bih-6988461a6/', '', '', 'https://web.facebook.com/charlesowusubih', '', '', '', '', '', '', 'Active', '', '', '');
+(7, 'Abdul', 'abdul', 2, 'team-member-7.png', 'team-member-banner-7.png', '', '<div><span style=\"font-family: var(--source-sans);\">Abdul, as a company organizer, plays a crucial role in coordinating various aspects of the organization. His strategic planning ensures efficient workflow and effective communication within the team. With a keen eye for detail, Kelvin optimizes processes, contributing to the overall success of the company. His organizational skills and leadership qualities make him an integral part of the team, driving productivity and fostering a collaborative work environment. As a key figure, Kelvin\'s dedication and expertise contribute significantly to the company\'s success.</span><br></div>', '', '', '', '', '', '', '', '', '', '', '', '', 'Active', '', '', ''),
+(8, 'Moses Asamoah', 'moses-asamoah', 5, 'team-member-8.png', 'team-member-banner-8.png', '', '<div><span style=\"font-family: var(--source-sans);\">Moses Asamoah, as a company organizer, plays a crucial role in coordinating various aspects of the organization. His strategic planning ensures efficient workflow and effective communication within the team. With a keen eye for detail, Kelvin optimizes processes, contributing to the overall success of the company. His organizational skills and leadership qualities make him an integral part of the team, driving productivity and fostering a collaborative work environment. As a key figure, Kelvin\'s dedication and expertise contribute significantly to the company\'s success.</span><br></div>', '#', '#', '', '', '', '', '', '', '', '', '', '', 'Active', '', '', ''),
+(12, 'Kelvin Yeboah', 'k-yeboah', 7, 'team-member-12.jpg', 'team-member-banner-12.jpg', '', '<div><span style=\"font-family: var(--source-sans);\">Kelvin Yeboah, as a company organizer, plays a crucial role in coordinating various aspects of the organization. His strategic planning ensures efficient workflow and effective communication within the team. With a keen eye for detail, Kelvin optimizes processes, contributing to the overall success of the company. His organizational skills and leadership qualities make him an integral part of the team, driving productivity and fostering a collaborative work environment. As a key figure, Kelvin\'s dedication and expertise contribute significantly to the company\'s success.</span><br></div>', '', '', '', '', '', '', '', '', '', '', '', '', 'Active', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -575,7 +629,8 @@ CREATE TABLE `tbl_testimonials` (
 INSERT INTO `tbl_testimonials` (`id`, `name`, `photo`, `detail`, `position`, `phone`, `email`) VALUES
 (7, ' John Doe', 'performer-7.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: \" source=\"\" sans=\"\" pro\",=\"\" sans-serif;=\"\" font-size:=\"\" 16px;=\"\" background-color:=\"\" rgb(254,=\"\" 254,=\"\" 254);\"=\"\">John is an experienced guitarist with a passion for creating memorable live performances. With over 10 years of experience.</span><br></p>', 'volunteer', '0200900000', 'a@b.com'),
 (11, 'Owusu Karl', 'testimonial-8.jpg', '<p style=\"padding: 0px; margin-bottom: 0px; font-family: &quot;Playfair Display&quot;, serif; list-style: none; border: none; outline: none; font-size: medium;\"><span source=\"\" sans=\"\" pro\",=\"\" sans-serif;=\"\" font-size:=\"\" 16px;=\"\" background-color:=\"\" rgb(254,=\"\" 254,=\"\" 254);\"=\"\" style=\"padding: 0px; margin: 0px; list-style: none; border: none; outline: none; color: rgb(51, 51, 51);\">Spendy is an experienced guitarist with a passion for creating memorable live performances. With over 10 years of experience.</span><br style=\"padding: 0px; margin: 0px; list-style: none; border: none; outline: none;\"></p><div class=\"testimonials-img\" style=\"padding: 1rem 0px 0px; margin: 0px; font-family: &quot;Playfair Display&quot;, serif; list-style: none; border: none; outline: none; display: flex; justify-content: center; align-items: center; gap: 1rem; font-size: medium;\"></div><p style=\"padding: 0px; margin: 0px; box-sizing: border-box; font-family: &quot;Playfair Display&quot;, serif; list-style: none; text-decoration: none; border: none; outline: none; color: rgb(0, 0, 0); font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;\"></p>', 'Volunteer', '0242155123', 'bihcharles2004@gmail.com'),
-(12, 'Namibra Admin', 'testimonial-12.jpg', '<p><span style=\"color: rgb(95, 99, 104); font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 12px; letter-spacing: 0.3px;\">Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA&nbsp;</span><span style=\"color: rgb(95, 99, 104); font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 12px; letter-spacing: 0.3px;\">You have received this email because&nbsp;</span><font color=\"rgba(0, 0, 0, 0)\" face=\"Roboto, Arial, Helvetica, sans-serif\"><span style=\"font-size: 12px; letter-spacing: 0.3px; background-color: rgb(255, 255, 255);\">ka.edu</span></font><span style=\"color: rgb(95, 99, 104); font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 12px; letter-spacing: 0.3px;\">&nbsp;shared a file or folder located in Google Drive with you.&nbsp;</span><span style=\"color: rgb(95, 99, 104); font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 12px; letter-spacing: 0.3px;\">use&nbsp;</span><font color=\"rgba(0, 0, 0, 0)\" face=\"Roboto, Arial, Helvetica, sans-serif\"><span style=\"background-color: rgb(255, 255, 255); font-size: 12px; letter-spacing: 0.3px;\">ka25.edu</span></font><span style=\"color: rgb(95, 99, 104); font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 12px; letter-spacing: 0.3px;\">&nbsp;shared a file or folder located in Google Drive with you.</span><br></p>', 'Web Dev', '0243559773', 'bih@gmm.com');
+(12, 'Asamoah Mensah', 'performer-12.jpg', '<p><font color=\"#5f6368\" face=\"Roboto, Arial, Helvetica, sans-serif\"><span style=\"font-size: 12px; letter-spacing: 0.3px;\"> My name is Charles o.Spendy is an experienced guitarist with a passion for creating memorable live performances. With over 10 years of experience. </span></font><br></p>', 'Web Dev', '0243559773', 'bih@gmm.com'),
+(13, 'Namibra Admin', 'testimonial-12.jpg', '<p><font color=\"#5f6368\" face=\"Roboto, Arial, Helvetica, sans-serif\"><span style=\"font-size: 12px; letter-spacing: 0.3px;\">&nbsp;My name is Charles o.Spendy is an experienced guitarist with a passion for creating memorable live performances. With over 10 years of experience.&nbsp;</span></font><br></p>', 'Secretary\r\n', '0243559773', 'bih@gmm.com');
 
 -- --------------------------------------------------------
 
@@ -615,31 +670,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `email`, `password`, `photo`, `role`, `status`) VALUES
-(1, 'admin@gmail.com', 'charlesbih', 'user-1.jpg', 'Admin', 'Active');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_volunteer`
---
-
-CREATE TABLE `tbl_volunteer` (
-  `id` int(250) NOT NULL,
-  `fullname` varchar(250) NOT NULL,
-  `address` varchar(200) NOT NULL,
-  `organisation` varchar(255) NOT NULL,
-  `phone` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tbl_volunteer`
---
-
-INSERT INTO `tbl_volunteer` (`id`, `fullname`, `address`, `organisation`, `phone`, `email`) VALUES
-(1, 'Charles Bih', 'kumasi, ghana', '', '0242155123', 'charlesbih@gmail.com'),
-(14, 'Nana Kwame Boakye', 'Takoradi, y road', 'BTA Group of Companies', '0556558655', 'nana@ymail.com'),
-(17, 'Charles Asare', 'karl@gg.com', '', '03456786789', 'bih@gg.com');
+(1, 'admin@gmail.com', 'charlesbih', 'user-1.jpg', 'Admin', 'Active'),
+(3, 'charles@gmail.com', '$2y$10$VNuTBD18rQgtmZo9ZaeeO.xZLSGchMrTL/ry8TZ3UqVgJRH4ONhhe', 'user-1.jpg', 'Admin', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -724,6 +756,18 @@ ALTER TABLE `tbl_programme_category`
   ADD PRIMARY KEY (`programme_category_id`);
 
 --
+-- Indexes for table `tbl_quote`
+--
+ALTER TABLE `tbl_quote`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_quote_category`
+--
+ALTER TABLE `tbl_quote_category`
+  ADD PRIMARY KEY (`quote_category_id`);
+
+--
 -- Indexes for table `tbl_settings`
 --
 ALTER TABLE `tbl_settings`
@@ -772,12 +816,6 @@ ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_volunteer`
---
-ALTER TABLE `tbl_volunteer`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -809,7 +847,7 @@ ALTER TABLE `tbl_comment`
 -- AUTO_INCREMENT for table `tbl_designation`
 --
 ALTER TABLE `tbl_designation`
-  MODIFY `designation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `designation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_events`
@@ -860,6 +898,18 @@ ALTER TABLE `tbl_programme_category`
   MODIFY `programme_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `tbl_quote`
+--
+ALTER TABLE `tbl_quote`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `tbl_quote_category`
+--
+ALTER TABLE `tbl_quote_category`
+  MODIFY `quote_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `tbl_settings`
 --
 ALTER TABLE `tbl_settings`
@@ -887,13 +937,13 @@ ALTER TABLE `tbl_subscriber`
 -- AUTO_INCREMENT for table `tbl_team_member`
 --
 ALTER TABLE `tbl_team_member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_testimonials`
 --
 ALTER TABLE `tbl_testimonials`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_testimonials_category`
@@ -905,13 +955,7 @@ ALTER TABLE `tbl_testimonials_category`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tbl_volunteer`
---
-ALTER TABLE `tbl_volunteer`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

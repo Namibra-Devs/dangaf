@@ -8,6 +8,9 @@ $fetchQuoteCategory = $quoteCategory->readAll('quote_category_id');
 $contacInfo =  new Admin($pdo, "tbl_settings");
 $fetchinfo = $contacInfo->readAll('id')[0];
 
+$Social = new Admin($pdo, "tbl_social");
+$fetchSocial = $Social->readAll('social_id');
+
 
 if (isset($_POST['submit'])) {
   $quote = new Admin($pdo, "tbl_quote");
@@ -284,8 +287,6 @@ if (isset($_POST['submit'])) {
                   <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24.6673 1.16661C24.6673 1.16661 23.8507 3.61661 22.334 5.13328C24.2007 16.7999 11.3673 25.3166 1.33398 18.6666C3.90065 18.7833 6.46732 17.9666 8.33398 16.3333C2.50065 14.5833 -0.416016 7.69994 2.50065 2.33328C5.06732 5.36661 9.03398 7.11661 13.0007 6.99994C11.9507 2.09995 17.6673 -0.700055 21.1673 2.56661C22.4506 2.56661 24.6673 1.16661 24.6673 1.16661Z" stroke="#E5E5E5" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-
-
                 </span>
 
                 <span class="">
