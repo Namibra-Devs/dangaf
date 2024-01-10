@@ -207,11 +207,11 @@ if (isset($_POST['form_home_about'])) {
             move_uploaded_file($path_tmp, '../assets/uploads/' . $final_name);
 
             // updating the database
-            $statement = $pdo->prepare("UPDATE tbl_settings SET home_about_title=?, home_about_img=?, home_about_content=? WHERE id=1");
-            $statement->execute(array($_POST['home_about_title'], $final_name, $_POST['home_about_content']));
+            $statement = $pdo->prepare("UPDATE tbl_settings SET home_about_title=?, home_about_img=?, our_vision=?, our_mission=? home_about_content=? WHERE id=1");
+            $statement->execute(array($_POST['home_about_title'], $final_name, $_POST['our_vision'], $_POST['our_mission'], $_POST['home_about_content']));
         } else {
-            $statement = $pdo->prepare("UPDATE tbl_settings SET home_about_title=?, home_about_content=? WHERE id=1");
-            $statement->execute(array($_POST['home_about_title'], $_POST['home_about_content']));
+            $statement = $pdo->prepare("UPDATE tbl_settings SET home_about_title=?, our_vision=?, our_mission=?, home_about_content=? WHERE id=1");
+            $statement->execute(array($_POST['home_about_title'], $_POST['our_vision'], $_POST['our_mission'], $_POST['home_about_content']));
         }
         $success_message = 'About Section is updated successfully.';
     }
@@ -311,6 +311,8 @@ foreach ($result as $row) {
     $home_about_title            = $row['home_about_title'];
     $home_about_img              = $row['home_about_img'];
     $home_about_content          = $row['home_about_content'];
+    $our_mission          = $row['our_mission'];
+    $our_vision          = $row['our_vision'];
     $home_title_service          = $row['home_title_service'];
     $home_subtitle_service       = $row['home_subtitle_service'];
     $home_status_service         = $row['home_status_service'];
@@ -376,9 +378,9 @@ foreach ($result as $row) {
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab_1" data-toggle="tab">Logo</a></li>
                     <li><a href="#tab_2" data-toggle="tab">Favicon</a></li>
-                    <li><a href="#tab_3" data-toggle="tab">General Content</a></li>
+                    <li><a href="#tab_3" data-toggle="tab">Footer / Contact</a></li>
                     <li><a href="#tab_4" data-toggle="tab">Email Settings</a></li>
-                    <li><a href="#tab_6" data-toggle="tab">Home Page</a></li>
+                    <li><a href="#tab_6" data-toggle="tab">About Page</a></li>
                     <li><a href="#tab_8" data-toggle="tab">Other</a></li>
                 </ul>
                 <div class="tab-content">
@@ -449,7 +451,7 @@ foreach ($result as $row) {
                             <div class="box box-info">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="" class="col-sm-2 control-label">Text - About Us </label>
+                                        <label for="" class="col-sm-2 control-label">Footer-About Us </label>
                                         <div class="col-sm-9">
                                             <textarea class="form-control editor" name="footer_about"><?php echo $footer_about; ?></textarea>
                                         </div>
@@ -479,7 +481,7 @@ foreach ($result as $row) {
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="col-sm-2 control-label">Contact Fax Number </label>
+                                        <label for="" class="col-sm-2 control-label">Hours Of Operation</label>
                                         <div class="col-sm-6">
                                             <input type="text" class="form-control" name="contact_fax" value="<?php echo $contact_fax; ?>">
                                         </div>
@@ -606,9 +608,21 @@ foreach ($result as $row) {
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="col-sm-2 control-label">Content </label>
+                                        <label for="" class="col-sm-2 control-label">Who We are(about) </label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control editor" name="home_about_content"><?php echo $home_about_content ?></textarea>
+                                            <textarea class="form-control h-100 resize-none" style="height: 200px;" name="home_about_content"><?php echo $home_about_content ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 control-label">Our Vision</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control h-100 resize-none" style="height: 150px;" name="our_vision"><?php echo $our_vision ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 control-label">Our Mission</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" style="height: 150px;" name="our_mission"><?php echo $our_mission ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">

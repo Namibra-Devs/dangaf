@@ -5,8 +5,19 @@ require_once('./public/inc/auxilliaries.php');
 $About = new Admin($pdo, "tbl_settings");
 $fetchAbout = $About->readAll('id')[0];
 
-$team = new Admin($pdo, "tbl_team_member");
-$fetchTeam = $team->readAll('id');
+$sql = "SELECT *
+        FROM tbl_team_member
+        INNER JOIN tbl_designation ON tbl_designation.designation_id = tbl_team_member.designation_id";
+
+// Prepare and execute the query
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+// Fetch the results
+$fetchTeam = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $fetchTeam = $team->readAll('id');
+// print_r($fetchTeam);
+// exit;
 
 ?>
 
@@ -47,7 +58,7 @@ $fetchTeam = $team->readAll('id');
     <div class="container px-4 justify-content-between w-100">
       <div class="d-flex justify-content-between w-100">
         <div class="logo">
-          <a class="navbar-brand" href="./index.html">
+          <a class="navbar-brand" href="./index.php">
             <img src="./public/asserts/images/logo.svg" alt="" class="image-fluid logo" />
           </a>
         </div>
@@ -61,19 +72,19 @@ $fetchTeam = $team->readAll('id');
         <div class="w-100">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-2 w-100">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./about.html">About Us</a>
+              <a class="nav-link active" aria-current="page" href="./about.php">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./services.html">Services</a>
+              <a class="nav-link" href="./services.php">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./portfolio.html">portfolio</a>
+              <a class="nav-link" href="./portfolio.php">portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./blog.html">Blog</a>
+              <a class="nav-link" href="./blog.php">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./contact.html">Contact us</a>
+              <a class="nav-link" href="./contact.php">Contact us</a>
             </li>
 
           </ul>
@@ -116,13 +127,15 @@ $fetchTeam = $team->readAll('id');
             <h4 class="fs-3 fw-bold services-header">Who We Are...</h4>
             <p class="mt-2 services-text text-start">
               <?php
-              echo $fetchAbout['footer_about']
+              echo $fetchAbout['home_about_content'];
               ?>
             </p>
           </div>
+
           <div class="col-lg-5 d-block d-lg-none px-4 py-5 py-lg-0 d-flex flex-column justify-content-center">
             <h4 class="fs-3 fw-bold services-header">How we started...</h4>
             <p class="mt-2 services-text text-start">
+
               Lorem ipsum diolor emet atet lorem ipsum dilore amet lorem iosum
               dilor amet lorem ipsum diilor amet ncdnd dnjsdkkdls
               jdslkdsp;mkldkmmckmm lksdls slddslkksd lLorem ipsum diolor emet
@@ -146,10 +159,10 @@ $fetchTeam = $team->readAll('id');
             <h1 class="fs-3 fw-bold ff-header">Our Vision</h1>
 
             <p class="mt-4">
-              Lorem ipsum diolor emet atet lorem ipsum dilore amet lorem iosum
-              dilor amet lorem ipsum diilor amet ncdnd dnjsdkkdls
-              jdslkdsp;mkldkmmckmm lksdls slddslkksd lLorem ipsum diolor emet
-              atet
+              <?php
+              echo $fetchAbout['our_vision'];
+              ?>
+
             </p>
           </div>
 
@@ -157,10 +170,10 @@ $fetchTeam = $team->readAll('id');
             <h1 class="fs-3 fw-bold ff-header">Our Mission</h1>
 
             <p class="mt-4">
-              Lorem ipsum diolor emet atet lorem ipsum dilore amet lorem iosum
-              dilor amet lorem ipsum diilor amet ncdnd dnjsdkkdls
-              jdslkdsp;mkldkmmckmm lksdls slddslkksd lLorem ipsum diolor emet
-              atet
+              <?php
+              echo $fetchAbout['our_mission'];
+              ?>
+
             </p>
           </div>
         </div>
@@ -182,18 +195,22 @@ $fetchTeam = $team->readAll('id');
         </div>
 
         <div class="row d-flex flex-md-row justify-content-center gap-3 w-100">
-          <?php foreach ($fetchTeam as $member) { ?>
+          <?php
+          $i = 0;
+          foreach ($fetchTeam as $member) {
+            $i++;
+          ?>
             <div class="card border-0" style="width: 20rem">
-              <img src="./public/asserts/images/thumbnail.svg" class="card-img-top" alt="..." />
+              <img src="./assets/uploads/<?php echo $member['photo']; ?>" class="card-img-top rounded" height="250px" alt="..." />
               <div class="card-body border-0 px-1">
                 <div class="d-flex justify-content-between">
                   <div>
                     <h5 class="card-title ff-header fs-6"><?php echo $member['name'] ?></h5>
-                    <p class="text-muted"><?php echo $member['name'] ?></p>
+                    <p class="text-muted"><?php echo $member['designation_name'] ?></p>
                   </div>
                   <div>
                     <p>
-                      <a class="btn btn-outline-light" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      <a class="btn btn-outline-light" data-bs-toggle="collapse" href="#collapseExample<?php echo $i ?>" role="button" aria-expanded="false" aria-controls="collapseExample<?php echo $i ?>">
                         <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M6.66628 8.47089C6.51072 8.47089 6.35983 8.44172 6.21361 8.38339C6.06739 8.32506 5.94605 8.24728 5.84961 8.15006L0.482942 2.78339C0.269053 2.5695 0.162109 2.29728 0.162109 1.96672C0.162109 1.63617 0.269053 1.36395 0.482942 1.15006C0.696831 0.936168 0.969054 0.829224 1.29961 0.829224C1.63016 0.829224 1.90239 0.936168 2.11628 1.15006L6.66628 5.70006L11.2163 1.15006C11.4302 0.936168 11.7024 0.829224 12.0329 0.829224C12.3635 0.829224 12.6357 0.936168 12.8496 1.15006C13.0635 1.36395 13.1704 1.63617 13.1704 1.96672C13.1704 2.29728 13.0635 2.5695 12.8496 2.78339L7.48294 8.15006C7.36628 8.26672 7.23989 8.34956 7.10378 8.39856C6.96766 8.44756 6.82183 8.47167 6.66628 8.47089Z" fill="#262626" />
                         </svg>
@@ -201,16 +218,16 @@ $fetchTeam = $team->readAll('id');
                     </p>
                   </div>
                 </div>
-                <div class="collapse" id="collapseExample">
+                <div class="collapse" id="collapseExample<?php echo $i ?>">
                   <div class="card card-body border-0 px-1 pt-0">
-                    <?php echo $member['name'] ?>
+                    <?php echo $member['detail'] ?>
                   </div>
                 </div>
               </div>
             </div>
           <?php } ?>
 
-          <div class="card border-0 px-1" style="width: 20rem">
+          <!-- <div class="card border-0 px-1" style="width: 20rem">
             <img src="./public/asserts/images/thumbnail1.svg" class="card-img-top" alt="..." />
             <div class="card-body border-0 px-1">
               <div class="d-flex justify-content-between">
@@ -242,9 +259,9 @@ $fetchTeam = $team->readAll('id');
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="card border-0 px-1" style="width: 20rem">
+          <!-- <div class="card border-0 px-1" style="width: 20rem">
             <img src="./public/asserts/images/thumbnail2.svg" class="card-img-top" alt="..." />
             <div class="card-body border-0 px-1">
               <div class="d-flex justify-content-between">
@@ -278,173 +295,173 @@ $fetchTeam = $team->readAll('id');
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <!-- FAQs -->
-    <div class="faqs">
-      <div class="container py-5">
-        <div class="d-lg-flex flex-row justify-content-around align-content-center w-100 gap-3">
-          <div class="w-100">
-            <div class="headers my-5 text-center">
-              <svg class="ml2 d-lg-inline d-none" width="370" height="60" viewBox="0 0 684 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M683.5 47H0.5V113H683.5V47Z" fill="#FFB764" mask="url(#path-1-inside-1_1966_5700)" />
-              </svg>
-              <svg class="ml2 d-lg-none d-inline" width="320" height="60" viewBox="0 0 684 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M683.5 47H0.5V113H683.5V47Z" fill="#FFB764" mask="url(#path-1-inside-1_1966_5700)" />
-              </svg>
+          <!-- FAQs -->
+          <div class="faqs">
+            <div class="container py-5">
+              <div class="d-lg-flex flex-row justify-content-around align-content-center w-100 gap-3">
+                <div class="w-100">
+                  <div class="headers my-5 text-center">
+                    <svg class="ml2 d-lg-inline d-none" width="370" height="60" viewBox="0 0 684 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M683.5 47H0.5V113H683.5V47Z" fill="#FFB764" mask="url(#path-1-inside-1_1966_5700)" />
+                    </svg>
+                    <svg class="ml2 d-lg-none d-inline" width="320" height="60" viewBox="0 0 684 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M683.5 47H0.5V113H683.5V47Z" fill="#FFB764" mask="url(#path-1-inside-1_1966_5700)" />
+                    </svg>
 
 
 
-              <div class="fs-3 fw-bold header-text text-center">Frequently Ask Questions</div>
+                    <div class="fs-3 fw-bold header-text text-center">Frequently Ask Questions</div>
+                  </div>
+                </div>
+
+                <div class="px-4 d-lg-flex flex-column w-100 bg-light">
+
+                  <div class="faq border-bottom py-2">
+
+
+                    <div class="w-100">
+                      <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
+                        <div class="d-flex justify-content-between w-100">
+
+                          <div class="text-dark">What Services does your IT Company Offer
+                          </div>
+
+
+                          <div class="">
+                            <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                          </div>
+
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="collapse" id="collapseExample4">
+                      <div class="card card-body border-0">
+                        Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="faq border-bottom py-2">
+
+
+                    <div class="w-100">
+                      <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
+                        <div class="d-flex justify-content-between w-100">
+
+                          <div class="text-dark">What Services does your IT Company Offer
+                          </div>
+
+
+                          <div class="">
+                            <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                          </div>
+
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="collapse" id="collapseExample5">
+                      <div class="card card-body border-0">
+                        Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="faq border-bottom py-2">
+
+
+                    <div class="w-100">
+                      <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
+                        <div class="d-flex justify-content-between w-100">
+
+                          <div class="text-dark">What Services does your IT Company Offer
+                          </div>
+
+
+                          <div class="">
+                            <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                          </div>
+
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="collapse" id="collapseExample6">
+                      <div class="card card-body border-0">
+                        Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="faq border-bottom py-2">
+
+
+                    <div class="w-100">
+                      <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
+                        <div class="d-flex justify-content-between w-100">
+
+                          <div class="text-dark">What Services does your IT Company Offer
+                          </div>
+
+
+                          <div class="">
+                            <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                          </div>
+
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="collapse" id="collapseExample7">
+                      <div class="card card-body border-0">
+                        Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="faq border-bottom py-2">
+
+
+                    <div class="w-100">
+                      <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
+                        <div class="d-flex justify-content-between w-100">
+
+                          <div class="text-dark">What Services does your IT Company Offer
+                          </div>
+
+
+                          <div class="">
+                            <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                          </div>
+
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="collapse" id="collapseExample8">
+                      <div class="card card-body border-0">
+                        Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="px-4 d-lg-flex flex-column w-100 bg-light">
-
-            <div class="faq border-bottom py-2">
-
-
-              <div class="w-100">
-                <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
-                  <div class="d-flex justify-content-between w-100">
-
-                    <div class="text-dark">What Services does your IT Company Offer
-                    </div>
-
-
-                    <div class="">
-                      <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-
-                    </div>
-
-                  </div>
-                </a>
-              </div>
-
-              <div class="collapse" id="collapseExample4">
-                <div class="card card-body border-0">
-                  Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
-                </div>
-              </div>
-            </div>
-            <div class="faq border-bottom py-2">
-
-
-              <div class="w-100">
-                <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
-                  <div class="d-flex justify-content-between w-100">
-
-                    <div class="text-dark">What Services does your IT Company Offer
-                    </div>
-
-
-                    <div class="">
-                      <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-
-                    </div>
-
-                  </div>
-                </a>
-              </div>
-
-              <div class="collapse" id="collapseExample5">
-                <div class="card card-body border-0">
-                  Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
-                </div>
-              </div>
-            </div>
-            <div class="faq border-bottom py-2">
-
-
-              <div class="w-100">
-                <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
-                  <div class="d-flex justify-content-between w-100">
-
-                    <div class="text-dark">What Services does your IT Company Offer
-                    </div>
-
-
-                    <div class="">
-                      <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-
-                    </div>
-
-                  </div>
-                </a>
-              </div>
-
-              <div class="collapse" id="collapseExample6">
-                <div class="card card-body border-0">
-                  Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
-                </div>
-              </div>
-            </div>
-            <div class="faq border-bottom py-2">
-
-
-              <div class="w-100">
-                <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
-                  <div class="d-flex justify-content-between w-100">
-
-                    <div class="text-dark">What Services does your IT Company Offer
-                    </div>
-
-
-                    <div class="">
-                      <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-
-                    </div>
-
-                  </div>
-                </a>
-              </div>
-
-              <div class="collapse" id="collapseExample7">
-                <div class="card card-body border-0">
-                  Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
-                </div>
-              </div>
-            </div>
-            <div class="faq border-bottom py-2">
-
-
-              <div class="w-100">
-                <a class="btn btn-light btn-outline-light w-100" data-bs-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
-                  <div class="d-flex justify-content-between w-100">
-
-                    <div class="text-dark">What Services does your IT Company Offer
-                    </div>
-
-
-                    <div class="">
-                      <svg width="25" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5.5V19.5M5 12.5H19" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-
-                    </div>
-
-                  </div>
-                </a>
-              </div>
-
-              <div class="collapse" id="collapseExample8">
-                <div class="card card-body border-0">
-                  Our mentorship programs are designed to provide one-on-one guidance and support to young individuals. Our mentorship programs are designed to provide one-on-one guidance and support to young individuals.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </main>
 
   <!-- Footer -->
@@ -470,19 +487,19 @@ $fetchTeam = $team->readAll('id');
           <h4 class="fs-5 fw-bold">Quick Links</h4>
           <ul class="quick-link mt-3 text-start">
             <li class="my-1">
-              <a href="./about.html" class="text-light text-decoration-none">Abouut Us</a>
+              <a href="./about.php" class="text-light text-decoration-none">Abouut Us</a>
             </li>
             <li class="my-1">
-              <a href="./services.html" class="text-light text-decoration-none">Our Services</a>
+              <a href="./services.php" class="text-light text-decoration-none">Our Services</a>
             </li>
             <li class="my-1">
-              <a href="./careers.html" class="text-light text-decoration-none">Portfolio</a>
+              <a href="./careers.php" class="text-light text-decoration-none">Portfolio</a>
             </li>
             <li class="my-1">
-              <a href="./applications.html" class="text-light text-decoration-none">Blogs</a>
+              <a href="./applications.php" class="text-light text-decoration-none">Blogs</a>
             </li>
             <li class="my-1">
-              <a href="./contact.html" class="text-light text-decoration-none">Contact Us</a>
+              <a href="./contact.php" class="text-light text-decoration-none">Contact Us</a>
             </li>
           </ul>
         </div>
